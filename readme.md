@@ -2,7 +2,9 @@
 
 ## Domain Proyek
 
-Pada bagian ini, kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
+Energi Surya merupakan salah satu sumber energi terbarukan yang semakin banyak dimanfaatkan untuk memenuhi kebutuhan energi, terutama di sektor rumah tangga dan industri. Namun, pemanfaatan energi surya sangat bergantung pada intensitas radiasi matahari yang tidak selalu stabil dan dapat dipengaruhi oleh berbagai faktor cuaca seperti suhu, kelembapan, tekanan udara, dan waktu.
+
+Oleh karena itu, prediksi radiasi matahari menjadi penting dalam rangka optimalisasi penggunaan panel surya, perencanaan daya pada sistem energi terbarukan, serta terbarukan, serta efisiensi distribusi energi. Dengan menggunakan pendekatan deep learning, kita dapat membangun model prediktif yang mampu mempelajari pola dari data historis cuaca untuk memperkirakan tingkat radiasi matahari di masa depan.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
