@@ -59,8 +59,6 @@ Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran har
 - TimeSunRise, TimeSunSet : Waktu matahari terbit dan terbenam.
 - Time : Waktu lokal dari pengukuran.
 
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis. -->
 #### Exploratory Data Analysis
 Untuk memahami karakteristik data secara lebih mendalam, dilakukan beberapa tahapan eksplorasi data sebagai berikut :
 1. Pemeriksaan Struktur Data dan Missing Value
@@ -87,7 +85,14 @@ Berdasarkan hasil eksplorasi data (EDA), fitur - fitur yang digunakan selain fit
     - MinutesSinceSunRise : Selisih menit antara waktu sekarang dan waktu matahari terbit
     - MinuteUntilSunset : Selisih menit antara waktu matahari terbenam dan waktu sekarang
     - DaylightDuration : Durasi siang hari dalam menit
-
+2. Handling Outlier
+Untuk menjaga kualitas data yang masuk ke model, dilakukan normalisasi terhadap nilai - nilai ekstrem (outlier). Penanganan ini penting agar model tidak terdistraksi oleh data yang tidak representatif. Metode yang digunakan adalah clipping berdasarkan distribusi kuartil (IQR)
+3. Seleksi Fitur dan Target
+Fitur dan Target yang digunakan dipisah terlebih dahulu pada variabel X sebagai fitur (Temperature, Humidity, Pressure, WindDirection(Degrees), Speed, SunRiseMinutes, SunSetMinutes, CurrentMinutes, MinuteUntilSunset and DaylightDuration) dan y sebagai target (Radiation)
+4. Normalisasi Fitur
+Untuk memastikan semua fitur memiliki skala yang sebanding, dilakukan normalisasi menggunakan StandardScaler dari sklearn.preprocessing. Metode ini mengubah distribusi fitur agar memiliki mean = 0 dan standard deviation = 1, sehingga mempercepat proses konvergensi model dan menghindari dominasi fitur tertentu.
+5. Split Data
+Melakukan splitting data menjadi dua yaitu Data training dan data testing yang dibagi sebesar 80:20
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
