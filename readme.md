@@ -81,12 +81,12 @@ Berdasarkan korelasi dan visualisasi, fitur Temperature dan Humidity menjadi kan
 Pada tahap ini dilakukan beberapa proses untuk menyiapkan data sebelum dilatih menggunakan model deep learning tipe Dense(fully connected neural network). Tahapan - tahapan yang dilakukan meliputi :
 1. Seleksi dan Fitur Engineering
 Berdasarkan hasil eksplorasi data (EDA), fitur - fitur yang digunakan selain fitur asli dari dataset seperti Temperature, Humidity, Pressure, WindDirection(Degrees), dan Speed, dilakukan penambahan fitur baru berdasarkan informasi waktu (Time, SunRise, dan SunSet). Fitur tambahan tersebut adalah :
-- SunRiseMinutes : Waktu matahari terbit dalam menit dari pukul 00:00
-- SunSetMinutes : Waktu matahari terbenam dalam menit dari pukul 00:00
-- CurrentMinutes : Waktu saat pengukuran dalam menit dari pukul 00:00
-- MinutesSinceSunRise : Selisih menit antara waktu sekarang dan waktu matahari terbit
-- MinuteUntilSunset : Selisih menit antara waktu matahari terbenam dan waktu sekarang
-- DaylightDuration : Durasi siang hari dalam menit
+    - SunRiseMinutes : Waktu matahari terbit dalam menit dari pukul 00:00
+    - SunSetMinutes : Waktu matahari terbenam dalam menit dari pukul 00:00
+    - CurrentMinutes : Waktu saat pengukuran dalam menit dari pukul 00:00
+    - MinutesSinceSunRise : Selisih menit antara waktu sekarang dan waktu matahari terbit
+    - MinuteUntilSunset : Selisih menit antara waktu matahari terbenam dan waktu sekarang
+    - DaylightDuration : Durasi siang hari dalam menit
 
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
