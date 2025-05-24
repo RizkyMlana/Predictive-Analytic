@@ -98,7 +98,20 @@ Melakukan splitting data menjadi dua yaitu Data training dan data testing yang d
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
+Model yang digunakan dalam proyek ini adalah Deep Neural Network (Dense Layer) dengan pendekatan regresi, karena target variabel Radiation bersifat numerik kontinu. Arsitektur Dense dipilih karena memiliki keunggulan dalam menangani hubungan non-linear antar fitur, serta relatif lebih ringan dibandingkan model seperti LSTM atau GRU.
+Arsitektur Model :
+Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai berikut:
+![Alt text]()
+Proses Training :
+Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
+
+Tuning dan Improvement :
+- Menambahkan jumlah neuron dan layer untuk meningkatkan kapasitas model dalam menangkap pola kompleks
+- EarlyStopping dan Callbacks untuk mencegah overfitting dan mempercepat training
+Kelebihan :
+- Mudah dibangun dan kostumisasi
+- Efektif untuk dataset tabular besar
+- Komputasi lebih ringan dibanding LSTM/GRU
 
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
@@ -106,13 +119,19 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 - Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**. -->
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
+Dalam proyek ini, dua metrik utama digunakan untuk mengevaluasi performa model regresi yaitu :
+- Mean Absolute Error(MAE)
+MAE ini mengukur rata rata kesalahan absolut antara nilai prediksi dan nilai aktual. MAE ini dinilai lebih mudah di interpretasikan karena berada dalam satuan yang sama dengan target
+
+Hasil Evaluasi
+
+
 
 <!-- Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
 - Penjelasan mengenai metrik yang digunakan
 - Menjelaskan hasil proyek berdasarkan metrik evaluasi -->
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+<!-- Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan. -->
 
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja. -->
