@@ -44,7 +44,7 @@ Metrik MAE digunakan untuk mengukur rata-rata selisih absolut antara nilai predi
 
 ## Data Understanding
 Dataset yang digunakan dalam proyek ini diambil dari Kaggle - Solar Energy, yang berisi data pengukuran kondisi cuaca dan radiasi matahari di berbagai waktu. Dataset ini digunakan untuk membangun model prediktif terhadap nilai radiasi matahari berdasarkan kondisi cuaca historis. 
-[Kaggle](https://www.kaggle.com/datasets/dronio/SolarEnergy).
+[Solar Energy](https://www.kaggle.com/datasets/dronio/SolarEnergy).
 
 ### Variabel-variabel pada Solar Energy dataset adalah sebagai berikut:
 Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran harian atau periodik (tergantung preprocessing) dari variabel-variabel cuaca dan radiasi matahari.
