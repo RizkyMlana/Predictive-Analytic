@@ -21,16 +21,14 @@ Bagian laporan ini mencakup:
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Masih terbatasnya sistem monitoring dan prediksi radiasi matahari secara real-time
+- Belum ada benchmark yang jelas untuk model prediksi radiasi matahari berbasis deep learning pada dataset meteorologi terbuka
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
+- Mengembangkan sistem prediksi radiasi matahari berbasis deep learning yang memanfaatkan data historis
+- Menyediakan baseline hasil eksperimen yang dapat digunakan oleh peneliti atau praktisi lain dalam pengembangan sistem energi surya
 
 Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
 
