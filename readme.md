@@ -21,46 +21,56 @@ Bagian laporan ini mencakup: -->
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- Masih terbatasnya sistem monitoring dan prediksi radiasi matahari secara real-time
-- Belum ada benchmark yang jelas untuk model prediksi radiasi matahari berbasis deep learning pada dataset meteorologi terbuka
+1. Masih terbatasnya sistem monitoring dan prediksi radiasi matahari secara real-time
+2.  Belum ada benchmark yang jelas untuk model prediksi radiasi matahari berbasis deep learning pada dataset meteorologi terbuka
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Mengembangkan sistem prediksi radiasi matahari berbasis deep learning yang memanfaatkan data historis
-- Menyediakan baseline hasil eksperimen yang dapat digunakan oleh peneliti atau praktisi lain dalam pengembangan sistem energi surya
+1. Mengembangkan sistem prediksi radiasi matahari berbasis deep learning yang memanfaatkan data historis
+2. Menyediakan baseline hasil eksperimen yang dapat digunakan oleh peneliti atau praktisi lain dalam pengembangan sistem energi surya
 
 
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**:
 - Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut:  -->
 
 ### Solution statementss
-- Mengembangkan model prediksi radiasi matahari menggunakan Deep Learning (Dense Layer)
+1. Mengembangkan model prediksi radiasi matahari menggunakan Deep Learning (Dense Layer)
 Model ini dibangun dengan arsitektur feedforward neural network (dense) yang terdiri dari dari beberapa lapisan fullly connected yang bertujuan untuk mempelajari pola hubungan non-linier antara fitur fitur cuaca seperti suhu, kelembapan, tekanan udara dan lain-lainnya terhadap output berupa nilai radiasi
-- Melakukan hyperparameter tuning untuk meningkatkan performa model
+2. Melakukan hyperparameter tuning untuk meningkatkan performa model
 dilakukan penyesuaian terhadap berbagai parameter seperti jumlah layer, jumlah neuron per layer, fungsi aktivasi, learning rate, jumlah epoch, dan batch size. Proses tuning ini bertujuan untuk memperoleh model dengan performa terbaik dalam memprediksi radiasi matahari.
-- Evaluasi model menggunakan metrik Mean Absolute Error (MAE) dan Mean Squared Error (MSE)
+3. Evaluasi model menggunakan metrik Mean Absolute Error (MAE) dan Mean Squared Error (MSE)
 Metrik MAE digunakan untuk mengukur rata-rata selisih absolut antara nilai prediksi dan nilai aktual. Sementara MSE memberikan penalti lebih besar terhadap error yang besar, sehingga cocok untuk mengidentifikasi prediksi yang jauh meleset. Kedua metrik ini memberikan gambaran menyeluruh terhadap performa model regresi yang dibangun.
 
 ## Data Understanding
-Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
+Dataset yang digunakan dalam proyek ini diambil dari Kaggle - Solar Energy, yang berisi data pengukuran kondisi cuaca dan radiasi matahari di berbagai waktu. Dataset ini digunakan untuk membangun model prediktif terhadap nilai radiasi matahari berdasarkan kondisi cuaca historis. 
+[Kaggle](https://www.kaggle.com/datasets/dronio/SolarEnergy).
 
-Selanjutnya uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
+### Variabel-variabel pada Solar Energy dataset adalah sebagai berikut:
+Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran harian atau periodik (tergantung preprocessing) dari variabel-variabel cuaca dan radiasi matahari.
+- UNIXTime : Waktu dalam format UNIX timestamp.
+- Data : Format waktu yang telah di-decode dari UNIXTime.
+- Radiation : Nilai radiasi matahari (target yang akan diprediksi).
+- Temperature : Suhu udara pada waktu pengukuran.
+- Pressure : Tekanan udara.
+- Humidity : Kelembaban udara.
+- WindDirection(Degrees) : Arah angin dalam derajat.
+- Speed : Kecepatan angin.
+- TimeSunRise, TimeSunSet : Waktu matahari terbit dan terbenam.
+- Time : Waktu lokal dari pengukuran.
 
-### Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+<!-- **Rubrik/Kriteria Tambahan (Opsional)**:
+- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis. -->
+#### Exploratory Data Analysis
+Untuk memahami karakteristik data secara lebih mendalam, dilakukan beberapa tahapan eksplorasi data sebagai berikut :
+1. 
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
+<!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
@@ -84,7 +94,7 @@ Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, probl
 
 **---Ini adalah bagian akhir laporan---**
 
-_Catatan:_
+<!-- _Catatan:_
 - _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja. -->
 
