@@ -6,17 +6,8 @@ Energi Surya merupakan salah satu sumber energi terbarukan yang semakin banyak d
 
 Oleh karena itu, prediksi radiasi matahari menjadi penting dalam rangka optimalisasi penggunaan panel surya, perencanaan daya pada sistem energi terbarukan, serta terbarukan, serta efisiensi distribusi energi. Dengan menggunakan pendekatan deep learning, kita dapat membangun model prediktif yang mampu mempelajari pola dari data historis cuaca untuk memperkirakan tingkat radiasi matahari di masa depan.
 
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-- Format Referensi dapat mengacu pada penulisan sitasi [IEEE](https://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE_Reference_Guide.pdf), [APA](https://www.mendeley.com/guides/apa-citation-guide/) atau secara umum seperti [di sini](https://penerbitdeepublish.com/menulis-buku-membuat-sitasi-dengan-mudah/)
-- Sumber yang bisa digunakan [Scholar](https://scholar.google.com/) -->
 
 ## Business Understanding
-
-<!-- Pada bagian ini, kamu perlu menjelaskan proses klarifikasi masalah.
-
-Bagian laporan ini mencakup: -->
 
 ### Problem Statements
 
@@ -30,9 +21,6 @@ Menjelaskan tujuan dari pernyataan masalah:
 1. Mengembangkan sistem prediksi radiasi matahari berbasis deep learning yang memanfaatkan data historis
 2. Menyediakan baseline hasil eksperimen yang dapat digunakan oleh peneliti atau praktisi lain dalam pengembangan sistem energi surya
 
-
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**:
-- Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut:  -->
 
 ### Solution statementss
 1. Mengembangkan model prediksi radiasi matahari menggunakan Deep Learning (Dense Layer)
@@ -103,35 +91,27 @@ Melakukan splitting data menjadi dua yaitu Data training dan data testing yang d
 5. Normalisasi Fitur :
 Untuk memastikan semua fitur memiliki skala yang sebanding, dilakukan normalisasi menggunakan StandardScaler dari sklearn.preprocessing. Metode ini mengubah distribusi fitur agar memiliki mean = 0 dan standard deviation = 1, sehingga mempercepat proses konvergensi model dan menghindari dominasi fitur tertentu.
 ![Alt text](img/Scale.png)
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
 
 ## Modeling
 Model yang digunakan dalam proyek ini adalah Deep Neural Network (Dense Layer) dengan pendekatan regresi, karena target variabel Radiation bersifat numerik kontinu. Arsitektur Dense dipilih karena memiliki keunggulan dalam menangani hubungan non-linear antar fitur, serta relatif lebih ringan dibandingkan model seperti LSTM atau GRU.
-- Arsitektur Model :
+1. Arsitektur Model :
 Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai berikut:
 ![Alt text](img/Arsitektur.png)
 
-- Proses Training :
+2. Proses Training :
 Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
 ![Alt text](img/Train.png)
 
-- Tuning dan Improvement :
+3. Tuning dan Improvement :
     - Menambahkan jumlah neuron dan layer untuk meningkatkan kapasitas model dalam menangkap pola kompleks
     - EarlyStopping dan Callbacks untuk mencegah overfitting dan mempercepat training
-- Kelebihan :
+4. Kelebihan :
     - Mudah dibangun dan kostumisasi
     - Efektif untuk dataset tabular besar
     - Komputasi lebih ringan dibanding LSTM/GRU
 
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**. -->
-
 ## Evaluation
-Dalam proyek ini, dua metrik utama digunakan untuk mengevaluasi performa model regresi yaitu :
+Dalam proyek ini, metrik utama digunakan untuk mengevaluasi performa model regresi yaitu :
 - Mean Absolute Error(MAE)
 MAE ini mengukur rata rata kesalahan absolut antara nilai prediksi dan nilai aktual. MAE ini dinilai lebih mudah di interpretasikan karena berada dalam satuan yang sama dengan target
 
@@ -139,18 +119,6 @@ Hasil Evaluasi
 ![Alt text](img/Evaltrain.png)
 
 
-<!-- Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi -->
-
-<!-- Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan. -->
-
-<!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja. -->
-
 **---Ini adalah bagian akhir laporan---**
 
-<!-- _Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja. -->
 
