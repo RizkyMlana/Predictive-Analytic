@@ -63,15 +63,19 @@ Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran har
 Untuk memahami karakteristik data secara lebih mendalam, dilakukan beberapa tahapan eksplorasi data sebagai berikut :
 1. Pemeriksaan Struktur Data dan Missing Value
 Dataset terdiri dari lebih dari 32.000 baris dengan berbagai variabel cuaca seperti Temperature, Humidity, Wind Speed, Radiation sebagai target. Hasil pengecekan menunjukan bahwa tidak terdapat missing value pada dataset, sehingga tidak diperlukan penanganan khusus terdapat nilai kosong.
+![Alt text](img/MissingVal.png)
 2. Statistik Deskriptif
 Nilai rata - rata radiasi berkisar 207 W/m², dengan nilai max mendekati 1601 W/m². Ini menunjukan adanya variasi besar pada intensitas cahaya matahari sepanjang waktu pengamatan, kemungkinan dipengaruhi oleh waktu dalam sehari, musim dan kondisi cuaca
+![Alt text](img/Describe.png)
 3. Distribusi Nilai Radiation
 Visualisasi histogram menunjukkan bahwa distribusi Radiation cenderung right-skewed, yaitu sebagian besar nilai berada di rentang rendah (sekitar 0–200 W/m²), dan hanya sedikit yang mencapai angka sangat tinggi. Pola ini wajar karena intensitas matahari tertinggi hanya terjadi dalam waktu tertentu (misalnya, siang hari pada hari cerah).
+![Alt text](img/Distribusi.png)
 4. Korelasi Antar Fitur
 Hasil perhitungan matriks korelasi menunjukkan bahwa:
     - Temperature memiliki korelasi positif yang cukup tinggi dengan Radiation (~0.63), yang masuk akal karena suhu biasanya meningkat seiring dengan meningkatnya radiasi matahari.
     - Humidity menunjukkan korelasi negatif terhadap Radiation, yang berarti semakin tinggi kelembaban, semakin rendah kemungkinan intensitas cahaya matahari (karena awan atau uap air menyerap sinar).
     - Fitur lain seperti Pressure, WindDirection, dan Speed menunjukkan korelasi yang lebih lemah terhadap target.
+![Alt text](img/Corr.png)
 5. Insight Awal
 Berdasarkan korelasi dan visualisasi, fitur Temperature dan Humidity menjadi kandidat kuat sebagai input penting untuk model prediksi. Distribusi yang tidak seimbang pada target Radiation juga perlu diperhatikan saat melakukan pemodelan karena dapat mempengaruhi performa model secara keseluruhan.
 
@@ -85,14 +89,21 @@ Berdasarkan hasil eksplorasi data (EDA), fitur - fitur yang digunakan selain fit
     - MinutesSinceSunRise : Selisih menit antara waktu sekarang dan waktu matahari terbit
     - MinuteUntilSunset : Selisih menit antara waktu matahari terbenam dan waktu sekarang
     - DaylightDuration : Durasi siang hari dalam menit
+![Alt text](img/Selection.png)
 2. Handling Outlier
 Untuk menjaga kualitas data yang masuk ke model, dilakukan normalisasi terhadap nilai - nilai ekstrem (outlier). Penanganan ini penting agar model tidak terdistraksi oleh data yang tidak representatif. Metode yang digunakan adalah clipping berdasarkan distribusi kuartil (IQR)
+![Alt text](img/Outlier1.png)
+![Alt text](img/Outlier2.png)
 3. Seleksi Fitur dan Target
 Fitur dan Target yang digunakan dipisah terlebih dahulu pada variabel X sebagai fitur (Temperature, Humidity, Pressure, WindDirection(Degrees), Speed, SunRiseMinutes, SunSetMinutes, CurrentMinutes, MinuteUntilSunset and DaylightDuration) dan y sebagai target (Radiation)
-4. Normalisasi Fitur
-Untuk memastikan semua fitur memiliki skala yang sebanding, dilakukan normalisasi menggunakan StandardScaler dari sklearn.preprocessing. Metode ini mengubah distribusi fitur agar memiliki mean = 0 dan standard deviation = 1, sehingga mempercepat proses konvergensi model dan menghindari dominasi fitur tertentu.
-5. Split Data
+![Alt text](img/Xy.png)
+
+4. Split Data
 Melakukan splitting data menjadi dua yaitu Data training dan data testing yang dibagi sebesar 80:20
+![Alt text](img/Split.png)
+5. Normalisasi Fitur
+Untuk memastikan semua fitur memiliki skala yang sebanding, dilakukan normalisasi menggunakan StandardScaler dari sklearn.preprocessing. Metode ini mengubah distribusi fitur agar memiliki mean = 0 dan standard deviation = 1, sehingga mempercepat proses konvergensi model dan menghindari dominasi fitur tertentu.
+![Alt text](img/Scale.png)
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan proses data preparation yang dilakukan
 - Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
@@ -103,7 +114,7 @@ Model yang digunakan dalam proyek ini adalah Deep Neural Network (Dense Layer) d
 Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai berikut:
 ![Alt text](img/Arsitektur.png)
 
--Proses Training :
+- Proses Training :
 Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
 ![Alt text](img/Train.png)
 
