@@ -81,7 +81,7 @@ Berdasarkan korelasi dan visualisasi, fitur Temperature dan Humidity menjadi kan
 
 ## Data Preparation
 Pada tahap ini dilakukan beberapa proses untuk menyiapkan data sebelum dilatih menggunakan model deep learning tipe Dense(fully connected neural network). Tahapan - tahapan yang dilakukan meliputi :
-1. Seleksi dan Fitur Engineering
+1. Seleksi dan Fitur Engineering :
 Berdasarkan hasil eksplorasi data (EDA), fitur - fitur yang digunakan selain fitur asli dari dataset seperti Temperature, Humidity, Pressure, WindDirection(Degrees), dan Speed, dilakukan penambahan fitur baru berdasarkan informasi waktu (Time, SunRise, dan SunSet). Fitur tambahan tersebut adalah :
     - SunRiseMinutes : Waktu matahari terbit dalam menit dari pukul 00:00
     - SunSetMinutes : Waktu matahari terbenam dalam menit dari pukul 00:00
@@ -90,18 +90,17 @@ Berdasarkan hasil eksplorasi data (EDA), fitur - fitur yang digunakan selain fit
     - MinuteUntilSunset : Selisih menit antara waktu matahari terbenam dan waktu sekarang
     - DaylightDuration : Durasi siang hari dalam menit
 ![Alt text](img/Selection.png)
-2. Handling Outlier
+2. Handling Outlier :
 Untuk menjaga kualitas data yang masuk ke model, dilakukan normalisasi terhadap nilai - nilai ekstrem (outlier). Penanganan ini penting agar model tidak terdistraksi oleh data yang tidak representatif. Metode yang digunakan adalah clipping berdasarkan distribusi kuartil (IQR)
 ![Alt text](img/Outlier1.png)
 ![Alt text](img/Outlier2.png)
-3. Seleksi Fitur dan Target
+3. Seleksi Fitur dan Target :
 Fitur dan Target yang digunakan dipisah terlebih dahulu pada variabel X sebagai fitur (Temperature, Humidity, Pressure, WindDirection(Degrees), Speed, SunRiseMinutes, SunSetMinutes, CurrentMinutes, MinuteUntilSunset and DaylightDuration) dan y sebagai target (Radiation)
 ![Alt text](img/Xy.png)
-
-4. Split Data
+4. Split Data :
 Melakukan splitting data menjadi dua yaitu Data training dan data testing yang dibagi sebesar 80:20
 ![Alt text](img/Split.png)
-5. Normalisasi Fitur
+5. Normalisasi Fitur :
 Untuk memastikan semua fitur memiliki skala yang sebanding, dilakukan normalisasi menggunakan StandardScaler dari sklearn.preprocessing. Metode ini mengubah distribusi fitur agar memiliki mean = 0 dan standard deviation = 1, sehingga mempercepat proses konvergensi model dan menghindari dominasi fitur tertentu.
 ![Alt text](img/Scale.png)
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
@@ -118,13 +117,13 @@ Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai 
 Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
 ![Alt text](img/Train.png)
 
-Tuning dan Improvement :
-- Menambahkan jumlah neuron dan layer untuk meningkatkan kapasitas model dalam menangkap pola kompleks
-- EarlyStopping dan Callbacks untuk mencegah overfitting dan mempercepat training
-Kelebihan :
-- Mudah dibangun dan kostumisasi
-- Efektif untuk dataset tabular besar
-- Komputasi lebih ringan dibanding LSTM/GRU
+- Tuning dan Improvement :
+    - Menambahkan jumlah neuron dan layer untuk meningkatkan kapasitas model dalam menangkap pola kompleks
+    - EarlyStopping dan Callbacks untuk mencegah overfitting dan mempercepat training
+- Kelebihan :
+    - Mudah dibangun dan kostumisasi
+    - Efektif untuk dataset tabular besar
+    - Komputasi lebih ringan dibanding LSTM/GRU
 
 <!-- **Rubrik/Kriteria Tambahan (Opsional)**: 
 - Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
