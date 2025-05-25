@@ -61,22 +61,22 @@ Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran har
 
 #### Exploratory Data Analysis
 Untuk memahami karakteristik data secara lebih mendalam, dilakukan beberapa tahapan eksplorasi data sebagai berikut :
-1. Pemeriksaan Struktur Data dan Missing Value
+1. Pemeriksaan Struktur Data dan Missing Value :
 Dataset terdiri dari lebih dari 32.000 baris dengan berbagai variabel cuaca seperti Temperature, Humidity, Wind Speed, Radiation sebagai target. Hasil pengecekan menunjukan bahwa tidak terdapat missing value pada dataset, sehingga tidak diperlukan penanganan khusus terdapat nilai kosong.
 ![Alt text](img/MissingVal.png)
-2. Statistik Deskriptif
+2. Statistik Deskriptif : 
 Nilai rata - rata radiasi berkisar 207 W/m², dengan nilai max mendekati 1601 W/m². Ini menunjukan adanya variasi besar pada intensitas cahaya matahari sepanjang waktu pengamatan, kemungkinan dipengaruhi oleh waktu dalam sehari, musim dan kondisi cuaca
 ![Alt text](img/Describe.png)
-3. Distribusi Nilai Radiation
+3. Distribusi Nilai Radiation :
 Visualisasi histogram menunjukkan bahwa distribusi Radiation cenderung right-skewed, yaitu sebagian besar nilai berada di rentang rendah (sekitar 0–200 W/m²), dan hanya sedikit yang mencapai angka sangat tinggi. Pola ini wajar karena intensitas matahari tertinggi hanya terjadi dalam waktu tertentu (misalnya, siang hari pada hari cerah).
 ![Alt text](img/Distribusi.png)
-4. Korelasi Antar Fitur
+4. Korelasi Antar Fitur :
 Hasil perhitungan matriks korelasi menunjukkan bahwa:
     - Temperature memiliki korelasi positif yang cukup tinggi dengan Radiation (~0.63), yang masuk akal karena suhu biasanya meningkat seiring dengan meningkatnya radiasi matahari.
     - Humidity menunjukkan korelasi negatif terhadap Radiation, yang berarti semakin tinggi kelembaban, semakin rendah kemungkinan intensitas cahaya matahari (karena awan atau uap air menyerap sinar).
     - Fitur lain seperti Pressure, WindDirection, dan Speed menunjukkan korelasi yang lebih lemah terhadap target.
 ![Alt text](img/Corr.png)
-5. Insight Awal
+5. Insight Awal :
 Berdasarkan korelasi dan visualisasi, fitur Temperature dan Humidity menjadi kandidat kuat sebagai input penting untuk model prediksi. Distribusi yang tidak seimbang pada target Radiation juga perlu diperhatikan saat melakukan pemodelan karena dapat mempengaruhi performa model secara keseluruhan.
 
 ## Data Preparation
