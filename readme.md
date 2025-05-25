@@ -99,10 +99,10 @@ Melakukan splitting data menjadi dua yaitu Data training dan data testing yang d
 
 ## Modeling
 Model yang digunakan dalam proyek ini adalah Deep Neural Network (Dense Layer) dengan pendekatan regresi, karena target variabel Radiation bersifat numerik kontinu. Arsitektur Dense dipilih karena memiliki keunggulan dalam menangani hubungan non-linear antar fitur, serta relatif lebih ringan dibandingkan model seperti LSTM atau GRU.
-Arsitektur Model :
+- Arsitektur Model :
 Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai berikut:
-![Alt text]()
-Proses Training :
+![Alt text](img/Arsitektur.png)
+-Proses Training :
 Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
 
 Tuning dan Improvement :
