@@ -102,8 +102,10 @@ Model yang digunakan dalam proyek ini adalah Deep Neural Network (Dense Layer) d
 - Arsitektur Model :
 Model awal dibangun menggunakan beberapa lapisan Dense, dengan struktur sebagai berikut:
 ![Alt text](img/Arsitektur.png)
+
 -Proses Training :
 Model dilatih dengan loss function Mean Squared Error (MSE) dan dioptimasi menggunakan algoritma Adam Optimizer. Evaluasi dilakukan menggunakan MAE
+![Alt text](img/Train.png)
 
 Tuning dan Improvement :
 - Menambahkan jumlah neuron dan layer untuk meningkatkan kapasitas model dalam menangkap pola kompleks
@@ -124,7 +126,7 @@ Dalam proyek ini, dua metrik utama digunakan untuk mengevaluasi performa model r
 MAE ini mengukur rata rata kesalahan absolut antara nilai prediksi dan nilai aktual. MAE ini dinilai lebih mudah di interpretasikan karena berada dalam satuan yang sama dengan target
 
 Hasil Evaluasi
-
+![Alt text](img/Evaltrain.png)
 
 
 <!-- Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
