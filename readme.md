@@ -35,7 +35,7 @@ Dataset yang digunakan dalam proyek ini diambil dari Kaggle - Solar Energy, yang
 [Solar Energy](https://www.kaggle.com/datasets/dronio/SolarEnergy).
 
 ### Variabel-variabel pada Solar Energy dataset adalah sebagai berikut:
-Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran harian atau periodik (tergantung preprocessing) dari variabel-variabel cuaca dan radiasi matahari.
+Dataset memiliki 32.686 baris dan 10 kolom data yang merepresentasikan pengukuran harian atau periodik (tergantung preprocessing) dari variabel-variabel cuaca dan radiasi matahari.
 - UNIXTime : Waktu dalam format UNIX timestamp.
 - Data : Format waktu yang telah di-decode dari UNIXTime.
 - Radiation : Nilai radiasi matahari (target yang akan diprediksi).
@@ -49,8 +49,8 @@ Dataset memiliki sekitar 32.000 baris data yang merepresentasikan pengukuran har
 
 #### Exploratory Data Analysis
 Untuk memahami karakteristik data secara lebih mendalam, dilakukan beberapa tahapan eksplorasi data sebagai berikut :
-1. Pemeriksaan Struktur Data dan Missing Value :
-Dataset terdiri dari lebih dari 32.000 baris dengan berbagai variabel cuaca seperti Temperature, Humidity, Wind Speed, Radiation sebagai target. Hasil pengecekan menunjukan bahwa tidak terdapat missing value pada dataset, sehingga tidak diperlukan penanganan khusus terdapat nilai kosong.
+1. Pemeriksaan Struktur data, missing values & duplicate data :
+Dataset terdiri dari 32.686 baris dengan berbagai variabel cuaca seperti Temperature, Humidity, Wind Speed, Radiation sebagai target. Hasil pengecekan menunjukan bahwa tidak terdapat missing value pada dataset, sehingga tidak diperlukan penanganan khusus terdapat nilai kosong.
 ![Alt text](img/MissingVal.png)
 2. Statistik Deskriptif : 
 Nilai rata - rata radiasi berkisar 207 W/m², dengan nilai max mendekati 1601 W/m². Ini menunjukan adanya variasi besar pada intensitas cahaya matahari sepanjang waktu pengamatan, kemungkinan dipengaruhi oleh waktu dalam sehari, musim dan kondisi cuaca
